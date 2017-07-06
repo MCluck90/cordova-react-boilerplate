@@ -6,7 +6,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack"
+        "build": "webpack",
+        "build:prod": "npm run build -- -p",
+        "watch": "npm run build -- --progress --watch",
+        "watch:prod": "npm run build:prod -- --progress --watch"
     },
     "author": "Mike Cluck",
     "license": "Apache-2.0",

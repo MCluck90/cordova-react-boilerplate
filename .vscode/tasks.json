@@ -22,6 +22,14 @@
     {
       "taskName": "build",
       "args": ["run", "build"]
+    },
+    {
+      "taskName": "build:prod",
+      "args": ["run", "build:prod"]
+    },
+    {
+      "taskName": "watch",
+      "args": ["run", "watch"]
     }
   ]
 }

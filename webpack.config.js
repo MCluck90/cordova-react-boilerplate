@@ -1,5 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const isProduction = process.argv.indexOf('-p') > -1;
+if (isProduction) {
+	process.env.NODE_ENV = 'production';
+}
 
 module.exports = {
   entry: './src/index.js',
@@ -7,11 +11,14 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'www')
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'Hello World',
-    inject: true,
-    template: path.resolve(__dirname, 'src/index.ejs')
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Hello World',
+      inject: true,
+      template: path.resolve(__dirname, 'src/index.ejs')
+    })
+  ],
+  devtool: (isProduction) ? 'nosources-source-map' : 'cheap-eval-source-map',
   module: {
     rules: [
       {
