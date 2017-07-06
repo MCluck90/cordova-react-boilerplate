@@ -5,7 +5,8 @@
     "description": "A simple bootstrap which provides React, Webpack, and ESLint support. Designed with Android in mind but should work regardless of the platform.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
     },
     "author": "Mike Cluck",
     "license": "Apache-2.0",
@@ -20,5 +21,12 @@
         "platforms": [
             "android"
         ]
+    },
+    "devDependencies": {
+        "css-loader": "^0.28.4",
+        "file-loader": "^0.11.2",
+        "html-webpack-plugin": "^2.29.0",
+        "style-loader": "^0.18.2",
+        "webpack": "^3.0.0"
     }
 }

@@ -1,3 +1,5 @@
+import './css/index.css';
+
 const app = {
     init() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
