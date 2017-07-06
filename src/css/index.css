@@ -87,14 +87,14 @@ h1 {
     padding:2px 0px;
 }
 
-.event.listening {
+.event-listening {
+    composes: event;
     background-color:#333333;
-    display:block;
 }
 
-.event.received {
+.event-received {
+    composes: event;
     background-color:#4B946A;
-    display:none;
 }
 
 @keyframes fade {
