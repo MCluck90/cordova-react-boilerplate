@@ -29,10 +29,31 @@ Open a command line and go to the folder for this repository. Type in
 cordova prepare
 ```
 
-and hit Enter. Watch as it installs all of the modules you need.
+and hit Enter.
+
+Next, run
+
+```
+npm install
+```
+
+Watch as it installs all of the modules you need.
 
 Plug your Android device into your computer via USB. On your Android, open Settings and go to Developer Tools.
 How exactly you access this may vary across devices. Enable Developer Tools and enable USB debugging.
+
+## Building the Application
+
+You need to run a Webpack build before every deployment. To do a single build run
+
+```
+npm run build
+```
+
+There's also a watch task so it will re-compile whenever your files change. If you're testing on a device
+you'll still need to restart the application to get the changes.
+
+I also added a couple of tasks to Visual Studio Code so you can run them directly from the editor.
 
 ## Running the Application
 
