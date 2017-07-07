@@ -1,9 +1,27 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProduction = process.argv.indexOf('-p') > -1;
 if (isProduction) {
   process.env.NODE_ENV = 'production';
+}
+
+// Copy over some files because css-loader is broken
+const filesToCopy = {
+  // Source: destination
+  './lib/materialize/css/materialize.min.css': './www/materialize.min.css',
+  './lib/materialize/fonts/material-icons.css': './www/material-icons.css',
+  './lib/materialize/fonts/material-icons.woff2': './www/material-icons.woff2',
+  './lib/materialize/js/materialize.min.js': './www/materialize.min.js',
+  './lib/materialize/fonts/roboto/Roboto-Regular.woff2': './www/fonts/roboto/Roboto-Regular.woff2',
+  './node_modules/jquery/dist/jquery.min.js': './www/jquery.min.js'
+};
+
+for (let source in filesToCopy) {
+  const dest = filesToCopy[source];
+  fs.createReadStream(source)
+    .pipe(fs.createWriteStream(dest));
 }
 
 module.exports = {
@@ -37,7 +55,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /src\/.*\.css$/,
         use: [
           'style-loader',
           {
@@ -62,7 +80,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.jsx?$/,
+        test: /src\/.*\.jsx?$/,
         enforce: 'pre',
         loader: 'eslint-loader'
       }
