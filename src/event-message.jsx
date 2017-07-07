@@ -1,5 +1,3 @@
-import React from 'react';
-
 import styles from './css/index.css';
 
 const EventMessage = ({ isReady }) => {
@@ -7,11 +5,10 @@ const EventMessage = ({ isReady }) => {
     return (
       <p className={styles.eventReceived}>Device is Ready</p>
     );
-  } else {
-    return (
-      <p className={styles.eventListening}>Connecting to Device</p>
-    );
-  }
+  } 
+  return (
+    <p className={styles.eventListening}>Connecting to Device</p>
+  );
 };
 
 export default EventMessage;

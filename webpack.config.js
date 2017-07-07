@@ -1,8 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProduction = process.argv.indexOf('-p') > -1;
 if (isProduction) {
-	process.env.NODE_ENV = 'production';
+  process.env.NODE_ENV = 'production';
 }
 
 module.exports = {
@@ -15,13 +16,16 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      React: 'react' // Ensure React is loaded even in modules which don't explicitly request it
+    }),
     new HtmlWebpackPlugin({
       title: 'Hello World',
       inject: true,
       template: path.resolve(__dirname, 'src/index.ejs')
     })
   ],
-  devtool: (isProduction) ? 'nosources-source-map' : 'cheap-eval-source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -56,6 +60,11 @@ module.exports = {
         use: [
           'file-loader'
         ]
+      },
+      {
+        test: /\.jsx?$/,
+        enforce: 'pre',
+        loader: 'eslint-loader'
       }
     ]
   }
