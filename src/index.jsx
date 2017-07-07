@@ -18,16 +18,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.app}>
+      <div>
         <nav role="navigation">
           <div className="nav-wrapper">
-            <a href="#" className="brand-logo center">Cordova</a>
+            <a href="#" className="brand-logo center">Cordova+React+ESLint</a>
           </div>
         </nav>
 
-        <h1>Apache Cordova</h1>
-        <div className={styles.blink}>
-          <EventMessage isReady={this.state.isReady} />
+        <div className="container">
+          <h1>Apache Cordova</h1>
+          <div className={styles.blink}>
+            <EventMessage isReady={this.state.isReady} />
+          </div>
         </div>
       </div>
     );

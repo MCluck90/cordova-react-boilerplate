@@ -30,6 +30,10 @@
     {
       "taskName": "watch",
       "args": ["run", "watch"]
+    },
+    {
+      "taskName": "watch:prod",
+      "args": ["run", "watch"]
     }
   ]
 }
