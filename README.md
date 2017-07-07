@@ -39,6 +39,8 @@ npm install
 
 Watch as it installs all of the modules you need.
 
+You can also do `yarn install` if you've installed [Yarn](https://yarnpkg.com/en/) (highly recommended).
+
 Plug your Android device into your computer via USB. On your Android, open Settings and go to Developer Tools.
 How exactly you access this may vary across devices. Enable Developer Tools and enable USB debugging.
 
@@ -50,7 +52,7 @@ You need to run a Webpack build before every deployment. To do a single build ru
 npm run build
 ```
 
-There's also a watch task so it will re-compile whenever your files change. If you're testing on a device
+There's also a watch task (`npm run watch`) so it will re-compile whenever your files change. If you're testing on a device
 you'll still need to restart the application to get the changes.
 
 I also added a couple of tasks to Visual Studio Code so you can run them directly from the editor.
