@@ -1,3 +1,4 @@
 # Cordova React Boilerplate
 
-Built with Android and Visual Studio Code in mind.
+I wrote this as a simple starter kit for whenever I make an Android app using Cordova. It should work for other platforms but that's what I had in mind
+when I made it.
