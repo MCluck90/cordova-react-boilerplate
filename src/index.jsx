@@ -19,16 +19,25 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <nav role="navigation">
+        <nav role="navigation" className="light-blue darken-3 white-text">
           <div className="nav-wrapper">
-            <a href="#" className="brand-logo center">Cordova+React+ESLint</a>
+            <a href="#" className="brand-logo center">React Boilerplate</a>
           </div>
         </nav>
 
         <div className="container">
-          <h1>Apache Cordova</h1>
-          <div className={styles.blink}>
-            <EventMessage isReady={this.state.isReady} />
+          <div className="row">
+            <div className="card white">
+              <div className="card-content black-text">
+                <span className="card-title">Boilerplate</span>
+                <p>React + Webpack + ESLint</p>
+              </div>
+              <div className="card-action">
+                <div className={styles.blink}>
+                  <EventMessage isReady={this.state.isReady} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

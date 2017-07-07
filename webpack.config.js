@@ -55,7 +55,7 @@ module.exports = {
         }
       },
       {
-        test: /src\/.*\.css$/,
+        test: /\.css$/,
         use: [
           'style-loader',
           {
@@ -80,7 +80,7 @@ module.exports = {
         ]
       },
       {
-        test: /src\/.*\.jsx?$/,
+        test: /\.jsx?$/,
         enforce: 'pre',
         loader: 'eslint-loader'
       }

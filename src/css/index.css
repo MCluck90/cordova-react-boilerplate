@@ -1,0 +1,31 @@
+:local .event {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 2px;
+}
+
+:local .event-listening {
+  composes: event;
+  background-color: #333333;
+}
+
+:local .event-received {
+  background-color: #4B946A;
+}
+
+@keyframes fade {
+  from { opacity: 1.0; }
+  50% { opacity: 0.4; }
+  to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+  from { opacity: 1.0; }
+  50% { opacity: 0.4; }
+  to { opacity: 1.0; }
+}
+ 
+:local .blink {
+  animation: fade 3000ms infinite;
+  -webkit-animation: fade 3000ms infinite;
+}
