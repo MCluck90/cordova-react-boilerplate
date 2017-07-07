@@ -39,6 +39,8 @@ npm install
 
 Watch as it installs all of the modules you need.
 
+You can also do `yarn install` if you've installed [Yarn](https://yarnpkg.com/en/) (highly recommended).
+
 Plug your Android device into your computer via USB. On your Android, open Settings and go to Developer Tools.
 How exactly you access this may vary across devices. Enable Developer Tools and enable USB debugging.
 
